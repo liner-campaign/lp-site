@@ -1,286 +1,268 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OFFICIAL NOTICE</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OFFICIAL NOTICE</title>
 
-    body {
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-      background:
-        radial-gradient(circle at top, #173266 0%, #08152f 45%, #050d1f 100%);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 16px;
-      overflow: hidden;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .wrap {
-      width: 100%;
-      max-width: 430px;
-    }
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: radial-gradient(circle at top, #173266 0%, #08152f 45%, #050d1f 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  overflow: hidden;
+}
 
-    .card {
-      background: linear-gradient(180deg, rgba(8, 21, 56, 0.96), rgba(8, 18, 46, 0.98));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 28px 22px 26px;
-      text-align: center;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.45);
-      position: relative;
-      overflow: hidden;
-    }
+.wrap {
+  width: 100%;
+  max-width: 430px;
+}
 
-    .label {
-      display: inline-block;
-      background: #d7b45e;
-      color: #1f2747;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-bottom: 24px;
-    }
+.card {
+  background: linear-gradient(180deg, rgba(8,21,56,0.96), rgba(8,18,46,0.98));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 28px 22px 26px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+  position: relative;
+  overflow: hidden;
+}
 
-    .title {
-      font-size: 21px;
-      font-weight: 800;
-      line-height: 1.5;
-      margin-bottom: 20px;
-      color: #ffffff;
-    }
+.label {
+  display: inline-block;
+  background: #d7b45e;
+  color: #1f2747;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
 
-    .badge {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.85);
-      font-size: 14px;
-      margin-bottom: 30px;
-    }
+.title {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
 
-    .count-stage {
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
 
-    .count-value {
-      font-size: 110px;
-      font-weight: 900;
-      color: #dcbc43;
-      text-shadow: 0 0 26px rgba(220,188,67,0.32);
-      min-height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity .25s ease, transform .25s ease;
-    }
+.count-stage {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .count-sub {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.86);
-      margin-top: 8px;
-    }
+.count {
+  font-size: 110px;
+  font-weight: 900;
+  color: #ffd34f;
+  text-shadow:
+    0 0 8px rgba(255,211,79,0.8),
+    0 0 16px rgba(255,211,79,0.6),
+    0 0 32px rgba(255,211,79,0.4),
+    0 0 60px rgba(255,211,79,0.25);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: transform .25s ease, opacity .25s ease;
+}
 
-    .final-stage {
-      display: none;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .45s ease, transform .45s ease;
-    }
+.count-sub {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.86);
+}
 
-    .final-stage.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
+.final-stage {
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: 0.45s;
+}
 
-    .final-title {
-      color: #dcbc43;
-      font-size: 21px;
-      font-weight: 800;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
+.final-stage.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .amount {
-      font-size: 60px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      text-shadow: 0 0 22px rgba(255,255,255,0.24);
-      margin-bottom: 28px;
-    }
+.final-title {
+  color: #dcbc43;
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
 
-    .desc {
-      font-size: 16px;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 28px;
-    }
+.amount {
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 22px rgba(255,255,255,0.24);
+  margin-bottom: 28px;
+}
 
-    .btn {
-      display: block;
-      width: 100%;
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 900;
-      border-radius: 22px;
-      padding: 22px 16px;
-      background: linear-gradient(135deg, #06C755, #00B900);
-      box-shadow: 0 0 28px rgba(6,199,85,0.28);
-      position: relative;
-      overflow: hidden;
-    }
+.desc {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
 
-    .btn small {
-      display: block;
-      margin-top: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      opacity: 0.9;
-    }
+.btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 22px;
+  padding: 22px 16px;
+  background: linear-gradient(135deg, #06C755, #00B900);
+  box-shadow: 0 0 28px rgba(6,199,85,0.28);
+  position: relative;
+  overflow: hidden;
+}
 
-    .btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.38) 50%,
-        rgba(255,255,255,0) 100%
-      );
-      transform: skewX(-25deg);
-      animation: shine 2.4s infinite;
-    }
+.btn small {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+}
 
-    .note {
-      margin-top: 16px;
-      font-size: 12px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.42);
-    }
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0)
+  );
+  transform: skewX(-25deg);
+  animation: shine 2.4s infinite;
+}
 
-    @keyframes shine {
-      0% { left: -75%; }
-      100% { left: 125%; }
-    }
+.note {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.42);
+}
 
-    @media (max-width: 480px) {
-      .amount {
-        font-size: 52px;
-      }
-
-      .count-value {
-        font-size: 96px;
-      }
-
-      .desc {
-        font-size: 15px;
-      }
-    }
-  </style>
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="label">OFFICIAL NOTICE</div>
+<div class="wrap">
+<div class="card">
 
-      <div id="countStage" class="count-stage">
-        <div class="title">エントリー情報を照合中...</div>
-        <div id="countValue" class="count-value">3</div>
-        <div id="countSub" class="count-sub">確認が完了するまで、そのままお待ちください。</div>
-      </div>
+<div class="label">OFFICIAL NOTICE</div>
 
-      <div id="finalStage" class="final-stage">
-        <div class="final-title">🎉 ♡♡♡♡♡♡♡♡♡♡♡♡</div>
+<div id="countStage" class="count-stage">
+  <div class="title">エントリー情報を照合中...</div>
+  <div id="count" class="count">3</div>
+  <div id="sub" class="count-sub">確認が完了するまでお待ちください。</div>
+</div>
 
-        <div class="badge">20歳以上限定特典</div>
+<div id="finalStage" class="final-stage">
+  <div class="final-title">🎉 当選おめでとうございます！</div>
 
-        <div class="amount">350,000円</div>
+  <div class="badge">20歳以上限定特典</div>
 
-        <div class="desc">
-          ♡♡♡♡♡♡♡♡♡♡♡♡♡。<br>
-          本日の特典受け取り♡♡♡♡♡♡♡♡。<br>
-          下記より公式LINEを追加して申請してください。
-        </div>
+  <div class="amount">350,000円</div>
 
-        <a
-          href="https://lin.ee/あなたのURL"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-        >
-          今すぐ特典を受け取る
-          <small>公式LINE追加画面が開きます</small>
-        </a>
-
-        <div class="note">
-          ※本通知はシステムのご案内により配信されています。<br>
-          一定時間を過ぎますと表示が切り替わる場合がございます。
-        </div>
-      </div>
-    </div>
+  <div class="desc">
+    当選おめでとうございます。<br>
+    本日の特典受け取り期限が迫っています。<br>
+    下記より公式LINEを追加してご確認ください。
   </div>
 
-  <script>
-    const countStage = document.getElementById('countStage');
-    const countValue = document.getElementById('countValue');
-    const countSub = document.getElementById('countSub');
-    const finalStage = document.getElementById('finalStage');
+  <a href="https://lin.ee/あなたのURL" target="_blank" class="btn">
+    今すぐ詳細を確認する
+    <small>公式LINE追加画面が開きます</small>
+  </a>
 
-    const steps = ['3', '2', '1', '♡'];
-    let i = 0;
+  <div class="note">
+    ※詳細は公式案内をご確認ください。<br>
+    ※表示内容はご案内ページ内に記載しています。
+  </div>
+</div>
 
-    function nextStep() {
-      countValue.style.opacity = '0';
-      countValue.style.transform = 'scale(0.88)';
+</div>
+</div>
+
+<script>
+const countEl = document.getElementById('count');
+const countStage = document.getElementById('countStage');
+const finalStage = document.getElementById('finalStage');
+
+const steps = ['3','2','1','当選'];
+let i = 0;
+
+function nextStep() {
+  countEl.style.opacity = '0';
+  countEl.style.transform = 'scale(0.85)';
+
+  setTimeout(() => {
+    i++;
+
+    if (i < steps.length) {
+      countEl.textContent = steps[i];
+      countEl.style.opacity = '1';
+      countEl.style.transform = 'scale(1.1)';
 
       setTimeout(() => {
-        i++;
-
-        if (i < steps.length) {
-          countValue.textContent = steps[i];
-          countValue.style.opacity = '1';
-          countValue.style.transform = 'scale(1)';
-
-          if (steps[i] === '♡') {
-            countSub.innerHTML = '最終画面へ移動します。';
-            setTimeout(showFinalStage, 900);
-            return;
-          }
-
-          setTimeout(nextStep, 850);
-        }
-      }, 220);
+        countEl.style.transform = 'scale(1)';
+      },150);
     }
 
-    function showFinalStage() {
-      countStage.style.display = 'none';
-      finalStage.classList.add('show');
+    if (i === steps.length - 1) {
+      setTimeout(() => {
+        countStage.style.display = 'none';
+        finalStage.classList.add('show');
+      },1200);
+      return;
     }
 
-    setTimeout(nextStep, 900);
-  </script>
+    setTimeout(nextStep,800);
+  },200);
+}
+
+setTimeout(nextStep,800);
+</script>
+
 </body>
 </html>
