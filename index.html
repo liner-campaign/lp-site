@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>当選しました</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background:
+    radial-gradient(circle at top, #173266 0%, #08152f 45%, #050d1f 100%);
+  color: #fff;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(9,24,63,0.97), rgba(8,18,46,0.98));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 28px 22px 26px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+}
+
+.label {
+  display: inline-block;
+  background: #d7b45e;
+  color: #1f2747;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.title {
+  color: #e2bc53;
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.amount {
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 22px rgba(255,255,255,0.24);
+  margin-bottom: 28px;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 22px;
+  padding: 20px;
+  background: linear-gradient(120deg, #08c955, #15d85f, #94f3ba);
+  box-shadow: 0 0 26px rgba(16,217,94,0.28);
+}
+
+.note {
+  font-size: 12px;
+  margin-top: 15px;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="card">
+
+    <div class="label">OFFICIAL NOTICE</div>
+
+    <div class="title">🎉 キャンペーン詳細のご案内</div>
+
+    <div class="badge">20歳以上限定キャンペーン</div>
+
+    <div class="amount">350,000円</div>
+
+    <div class="desc">
+      期限が迫っています。<br>
+    </div>
+
+    <!-- 🔥ここだけ自分のLINEに変える -->
+    <a href="https://lin.ee/あなたのURL"
+       target="_blank"
+       class="btn">
+      今すぐ詳細を確認する
+    </a>
+
+    <div class="note">
+      ※詳細は公式LINEにてご案内しています
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
